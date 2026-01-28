@@ -18,7 +18,7 @@ module.exports = async function (context, req) {
             );
         context.res = { status: 200, body: result.recordset };
     } catch (err) {
-        context.res = { status: 500, body: err.message + " error!" };
+        context.res = { status: 500, body: err.message };
     } finally {
         pool.close();
     }
