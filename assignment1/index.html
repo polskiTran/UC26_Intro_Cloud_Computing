@@ -1,4 +1,4 @@
-<!doctype html>
+<!--<!doctype html>
 <html>
     <head>
         <title>Student Count by Country</title>
@@ -28,6 +28,156 @@
                     )
                     .join("");
             }
+            fetchStudentData();
+        </script>
+    </body>
+</html>-->
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Student Count by Country</title>
+        <style>
+            :root {
+                --bg-color: #ffffff;
+                --text-color: #1a1a1a;
+                --border-color: #1a1a1a;
+                --font-stack:
+                    "Menlo", "DejaVu Sans Mono", "Liberation Mono", "Consolas",
+                    "Ubuntu Mono", "Courier New", "andale mono",
+                    "lucida console", monospace;
+            }
+
+            body {
+                background-color: var(--bg-color);
+                color: var(--text-color);
+                font-family: var(--font-stack);
+                font-size: 16px;
+                line-height: 1.5;
+                margin: 0;
+                padding: 2rem;
+            }
+
+            /* Center layout with character-based width (approx 72 chars wide) */
+            main {
+                max-width: 72ch;
+                margin: 4rem auto;
+                border: 2px solid var(--border-color);
+                padding: 2rem;
+                box-shadow: 8px 8px 0px var(--border-color);
+            }
+
+            h1 {
+                font-size: 1.5rem;
+                text-transform: uppercase;
+                border-bottom: 2px solid var(--border-color);
+                padding-bottom: 1rem;
+                margin-top: 0;
+                margin-bottom: 2rem;
+                letter-spacing: -1px;
+            }
+
+            /* Monospace Table Styling */
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 2rem;
+                font-variant-numeric: tabular-nums;
+            }
+
+            th,
+            td {
+                border: 1px solid var(--border-color);
+                padding: 0.75rem 1rem;
+                text-align: left;
+            }
+
+            th {
+                background-color: #f0f0f0;
+                text-transform: uppercase;
+                font-weight: bold;
+                letter-spacing: 0.05em;
+            }
+
+            /* Loading State Styling */
+            #loading {
+                margin-top: 1rem;
+                font-style: italic;
+                display: none; /* Hidden by default */
+            }
+
+            /* Error State Styling */
+            .error {
+                color: red;
+                border: 1px dashed red;
+                padding: 1rem;
+                margin-top: 1rem;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>Student Count by Country</h1>
+
+            <div id="loading">Fetching data...</div>
+            <div id="error-msg" class="error"></div>
+
+            <table id="studentTable">
+                <thead>
+                    <tr>
+                        <th>Country</th>
+                        <th>Count</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </main>
+
+        <script>
+            async function fetchStudentData() {
+                const loadingEl = document.getElementById("loading");
+                const errorEl = document.getElementById("error-msg");
+                const tableBody = document.querySelector("#studentTable tbody");
+
+                // Show loading
+                loadingEl.style.display = "block";
+                errorEl.style.display = "none";
+
+                try {
+                    // Use relative path for Static Web App proxy
+                    const response = await fetch("/api/GetStudents");
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP Error: ${response.status}`);
+                    }
+
+                    const data = await response.json();
+
+                    // Clear table and hide loading
+                    tableBody.innerHTML = "";
+                    loadingEl.style.display = "none";
+
+                    // Populate Rows
+                    tableBody.innerHTML = data
+                        .map(
+                            (row) =>
+                                `<tr>
+                        <td>${row.Country}</td>
+                        <td>${row.StudentCount}</td>
+                    </tr>`,
+                        )
+                        .join("");
+                } catch (error) {
+                    console.error("Fetch error:", error);
+                    loadingEl.style.display = "none";
+                    errorEl.style.display = "block";
+                    errorEl.textContent = `Error: ${error.message}. Ensure the backend is running.`;
+                }
+            }
+
             fetchStudentData();
         </script>
     </body>
