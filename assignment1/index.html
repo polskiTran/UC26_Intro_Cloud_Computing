@@ -16,7 +16,9 @@
         </table>
         <script>
             async function fetchStudentData() {
-                const response = await fetch("api/getStudents"); // replace with real api endpoint
+                const response = await fetch(
+                    "https://icy-plant-04b4d1b0f.4.azurestaticapps.net/api/getStudents",
+                ); // replace with real api endpoint
                 const data = await response.json();
                 const tableBody = document.querySelector("#studentTable tbody");
                 tableBody.innerHTML = data
