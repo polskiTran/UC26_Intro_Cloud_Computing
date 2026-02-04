@@ -3,3 +3,12 @@
 
 # Environment files
 .env
+
+# Virtual environment
+.venv
+
+# node
+node_modules
+
+# cache
+__pycache__
