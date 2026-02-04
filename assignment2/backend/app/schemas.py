@@ -11,6 +11,7 @@ class UserBase(BaseModel):
     first_name: Optional[str] = None
     last_name: Optional[str] = None
     address: Optional[str] = None
+    file_word_count: Optional[int] = None
 
     @field_validator("username")
     @classmethod

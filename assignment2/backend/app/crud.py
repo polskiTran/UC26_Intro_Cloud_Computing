@@ -155,6 +155,15 @@ def update_user_file(db: Session, user_id: int, file_path: str, original_name: s
 
     user.file_path = file_path
     user.original_filename = original_name
+
+    # get word count in .txt file
+    if file_path.endswith(".txt"):
+        with open(file_path, "r") as f:
+            content = f.read()
+            user.file_word_count = len(content.split())
+    else:
+        user.file_word_count = None
+
     db.commit()
     db.refresh(user)
     return user
@@ -180,6 +189,7 @@ def delete_user_file(db: Session, user_id: int):
     # clear DB columns
     user.file_path = None
     user.original_filename = None
+    user.file_word_count = None
     db.commit()
     db.refresh(user)
     return user

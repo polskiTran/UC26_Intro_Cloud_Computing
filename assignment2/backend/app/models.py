@@ -12,7 +12,7 @@ class User(Base):
     # login/signup info
     username = Column(String, unique=True, index=True, nullable=False)
     email = Column(String, unique=True, index=True, nullable=False)
-    hashed_password = Column(String, nullable=False)  # TODO: pwd encryption
+    hashed_password = Column(String, nullable=False)
 
     # user info
     first_name = Column(String, nullable=True)
@@ -22,3 +22,4 @@ class User(Base):
     # file upload. txt only
     file_path = Column(String, nullable=True)  # [username]+[file_name].txt
     original_filename = Column(String, nullable=True)
+    file_word_count = Column(Integer, nullable=True)
