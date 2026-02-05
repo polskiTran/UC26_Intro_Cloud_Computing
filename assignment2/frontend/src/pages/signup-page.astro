@@ -1,0 +1,29 @@
+---
+import "../styles/global.css";
+// Component Imports
+import { SignupForm } from "@/components/signup-form";
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/basics/astro-components/
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="generator" content={Astro.generator} />
+        <title>User Store Signup</title>
+    </head>
+
+    <body>
+        <div
+            class="flex min-h-svh w-full items-center justify-center p-6 md:p-10"
+        >
+            <div class="w-full max-w-sm">
+                <SignupForm client:load />
+            </div>
+        </div>
+    </body>
+</html>

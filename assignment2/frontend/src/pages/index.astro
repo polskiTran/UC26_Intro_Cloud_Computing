@@ -1,0 +1,29 @@
+---
+import "../styles/global.css";
+// Component Imports
+// import Button from '../components/Button.astro';
+import { Button } from "@/components/ui/button";
+
+// Full Astro Component Syntax:
+// https://docs.astro.build/basics/astro-components/
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro + TailwindCSS</title>
+	</head>
+
+	<body>
+		<div class="grid place-items-center h-screen content-center">
+			<Button>Shadcn UI Tailwind Button in Astro!</Button>
+			<a href="/signup-page" class="p-4 underline">Go to signup page</a>
+			<a href="/signin-page" class="p-4 underline">Go to signin page</a>
+			<a href="/main-page" class="p-4 underline">Go to main page</a>
+		</div>
+	</body>
+</html>

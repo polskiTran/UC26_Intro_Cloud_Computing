@@ -97,7 +97,7 @@ def delete_user(username: str, db: Session = Depends(get_db)):
 
 
 # --- Upload File ---
-@router.post("/{username}/file")
+@router.post("/{username}/file", response_model=schemas.UserResponse)
 def upload_file(
     username: str, file: UploadFile = File(...), db: Session = Depends(get_db)
 ):
@@ -139,8 +139,8 @@ def upload_file(
     except Exception:
         raise HTTPException(status_code=500, detail="Could not save file")
 
-    crud.update_user_file(db, user.id, file_path, file.filename)
-    return {"message": "File uploaded", "filename": file.filename}
+    updated_user = crud.update_user_file(db, user.id, file_path, file.filename)
+    return updated_user
 
 
 # --- Download File ---
