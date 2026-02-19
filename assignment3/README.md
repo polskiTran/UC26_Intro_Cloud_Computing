@@ -11,13 +11,13 @@
 - Build a Dockerfile using a lightweight base image (e.g., ubuntu, alpine, python:3.9-slim). (1 Point)
     - Upload the completed Dockerfile as a text file, or share the code in GitHub.
 - Develop a Python script (or use another language of your choice) to perform the following tasks:  (1 Point)
-    - Read two text files: IF.txt Download IF.txt  and AlwaysRememberUsThisWay.txt Download AlwaysRememberUsThisWay.txt located at /home/data inside the container, and perform the objectives listed in Step 4.
+    - Read two text files: `IF.txt` and `AlwaysRememberUsThisWay.txt` located at /home/data inside the container, and perform the objectives listed in Step 4.
     - Upload the completed script (e.g., scripts.py) as a text file, or share the code in GitHub.
 - The Python script must achieve the following objectives. Grading will be done by executing the tar file named with your email username (e.g., KANSKRI.tar) in Step 6:
     - a. Count the total number of words in each text file located at /home/data.  (1 Point)
     - b. Calculate the grand total of words across both files. (1 Point)
-    - c. Identify the top 3 most frequent words and their respective counts in  IF.txt Download IF.txt (1 Point)
-    - d. Handle contractions (Examples: I'm, can't, don't) by splitting them into individual words, then find the top 3 most frequent words and their respective counts in AlwaysRememberUsThisWay.txt Download AlwaysRememberUsThisWay.txt (1 Point)
+    - c. Identify the top 3 most frequent words and their respective counts in `IF.txt` (1 Point)
+    - d. Handle contractions (Examples: I'm, can't, don't) by splitting them into individual words, then find the top 3 most frequent words and their respective counts in `AlwaysRememberUsThisWay.txt` (1 Point)
     - e. Determine the IP address of the machine running the container. (1 Point)
     - f. Write the results to a text file at /home/data/output/result.txt. When the container is executed, it should print the contents of result.txt to the console before exiting. (1 Point)
 - Optimize your Docker image to ensure that its size is as small as possible (target size: less than 200MB). (1 Point)
