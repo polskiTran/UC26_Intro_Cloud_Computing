@@ -177,7 +177,7 @@
                     console.error("Fetch error:", error);
                     loadingEl.style.display = "none";
                     errorEl.style.display = "block";
-                    errorEl.textContent = `Error: ${error.message}. Ensure the backend is running.`;
+                    errorEl.textContent = `Error: ${error.message}. Please refresh the page after a minute (serverless coldstart). Ensure the backend is running.`;
                 }
             }
 
