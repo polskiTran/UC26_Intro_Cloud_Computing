@@ -1,10 +1,6 @@
 ---
 import "../styles/global.css";
-// Component Imports
 import { LoginForm } from "@/components/login-form";
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
 ---
 
 <html lang="en">
@@ -14,10 +10,16 @@ import { LoginForm } from "@/components/login-form";
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" href="/favicon.ico" />
         <meta name="generator" content={Astro.generator} />
-        <title>User Store Signup</title>
+        <title>User Store Login</title>
     </head>
-
     <body>
+        <script>
+            const userStr = localStorage.getItem("user");
+            if (userStr) {
+                window.location.replace("/main-page");
+            }
+        </script>
+
         <div
             class="flex min-h-svh w-full items-center justify-center p-6 md:p-10"
         >

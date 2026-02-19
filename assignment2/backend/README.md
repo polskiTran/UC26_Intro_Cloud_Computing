@@ -28,7 +28,7 @@ user-info-app/
 > Make sure [uv](https://docs.astral.sh/uv/) is installed
 
 Install the dependencies
-```shell
+```bash
 uv sync
 ```
 
@@ -39,14 +39,14 @@ sqlite:///./data/[___].db
 
 
 Run the app
-```shell
+```bash
 uv run uvicorn app.main:app --reload
 ```
 
 From the localhost link, append `/docs` to get swagger UI
 
 Useful command
-```shell
+```bash
 # check DB
 cd assignment2/backend/data && sqlite3 users.db "SELECT * FROM users;"
 ```

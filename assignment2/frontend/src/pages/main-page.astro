@@ -14,6 +14,13 @@ import { UserDashboard } from "@/components/user-dashboard";
     </head>
 
     <body class="bg-background text-foreground">
+        <script>
+            const userStr = localStorage.getItem("user");
+            if (!userStr) {
+                window.location.replace("/signin-page");
+            }
+        </script>
+
         <UserDashboard client:load />
     </body>
 </html>

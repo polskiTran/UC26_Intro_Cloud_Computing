@@ -11,7 +11,7 @@ load_dotenv()
 os.makedirs("data", exist_ok=True)
 
 # database url
-DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./data/users.db")
 if not DATABASE_URL:
     raise ValueError("DATABASE_URL is not set")
 

@@ -1,5 +1,7 @@
 // API configuration
-const API_BASE_URL = import.meta.env.PUBLIC_API_URL || "http://localhost:8000";
+// Use /api prefix which nginx proxies to the backend
+// This works for both local dev (with nginx) and EC2 deployment
+const API_BASE_URL = import.meta.env.PUBLIC_API_URL || "/api";
 
 // Types matching backend schemas
 export interface UserCreate {
