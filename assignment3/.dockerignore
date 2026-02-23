@@ -1,0 +1,43 @@
+# Git
+.git
+.gitignore
+
+# Python / uv
+.venv
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.mypy_cache
+.pytest_cache
+.coverage
+htmlcov/
+.pytest_cache/
+.cache/
+#uv.lock  # Optional: include if using --frozen and copying separately
+#pyproject.toml  # Optional: exclude if mounting in Dockerfile for caching
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDEs and OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Builds/dist
+dist/
+build/
+*.egg-info/
+*.egg
+
+# Logs and temp
+*.log
+logs/
+tmp/
+temp/
