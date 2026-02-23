@@ -112,17 +112,18 @@ def construct_summary(
     summary += "              RESULTS SUMMARY\n"
     summary += "=" * 50 + "\n\n"
 
-    summary += "WORD COUNT STATISTICS\n"
+    summary += "1. WORD COUNT STATISTICS\n"
     summary += "-" * 50 + "\n"
     summary += f"  IF Words Count     : {IF_WORDS_COUNT}\n"
-    summary += f"  ARUTW Words Count  : {ARUTW_WORDS_COUNT}\n\n"
+    summary += f"  ARUTW Words Count  : {ARUTW_WORDS_COUNT}\n"
+    summary += f"  Total Words Count  : {IF_WORDS_COUNT + ARUTW_WORDS_COUNT}\n\n"
 
-    summary += "TOP WORDS\n"
+    summary += "2. TOP WORDS\n"
     summary += "-" * 50 + "\n"
     summary += f"  IF Top Words       : {IF_TOP_WORDS}\n"
     summary += f"  ARUTW Top Words    : {ARUTW_TOP_WORDS}\n\n"
 
-    summary += "SYSTEM INFORMATION\n"
+    summary += "3. SYSTEM INFORMATION\n"
     summary += "-" * 50 + "\n"
     summary += f"  Local IP Address   : {LOCAL_IP_ADDRESS}\n\n"
 
