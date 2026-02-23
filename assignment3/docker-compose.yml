@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+    word-counter-service:
+        image: introcc-proj3-docker:latest
+        deploy:
+            replicas: 2 # at least 2 replicas
+            restart_policy:
+                condition: on-failure
+        # runs script, then keeps the container alive so swarm does not crash
+        command: sh -c "python script.py && tail -f /dev/null"
