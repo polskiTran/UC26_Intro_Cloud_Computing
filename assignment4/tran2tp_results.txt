@@ -1,0 +1,105 @@
+NOTE: For a more detail report with screenshot and code please refer to the tran2tp_report.pdf
+
+1. Download Anaconda Python, install PySpark, and launch Jupyter Notebook (Points: 1):
+> For screenshot please refer to the tran2tp_report.pdf
+
+2. Load the CSV files and display the count of each dataset (Points: 1):
+> loaded 19 total csv file (2016 florida data does not exist). For outout please refer to tran2tp_report.pdf
+
+3. Find the hottest day (column MAX) for each year (Points: 1):
++-----------+------------------------------------------------+----------+-----+
+|STATION    |NAME                                            |DATE      |MAX  |
++-----------+------------------------------------------------+----------+-----+
+|72429793812|CINCINNATI MUNICIPAL AIRPORT LUNKEN FIELD, OH US|2015-06-12|91.9 |
+|72429793812|CINCINNATI MUNICIPAL AIRPORT LUNKEN FIELD, OH US|2016-07-24|93.9 |
+|72429793812|CINCINNATI MUNICIPAL AIRPORT LUNKEN FIELD, OH US|2017-07-22|91.9 |
+|72429793812|CINCINNATI MUNICIPAL AIRPORT LUNKEN FIELD, OH US|2018-07-04|96.1 |
+|72429793812|CINCINNATI MUNICIPAL AIRPORT LUNKEN FIELD, OH US|2019-09-30|95.0 |
+|72429793812|CINCINNATI MUNICIPAL AIRPORT LUNKEN FIELD, OH US|2020-07-05|93.9 |
+|72429793812|CINCINNATI MUNICIPAL AIRPORT LUNKEN FIELD, OH US|2021-08-12|95.0 |
+|72429793812|CINCINNATI MUNICIPAL AIRPORT LUNKEN FIELD, OH US|2022-06-14|96.1 |
+|72429793812|CINCINNATI MUNICIPAL AIRPORT LUNKEN FIELD, OH US|2023-08-23|96.1 |
+|72429793812|CINCINNATI MUNICIPAL AIRPORT LUNKEN FIELD, OH US|2024-08-30|100.9|
++-----------+------------------------------------------------+----------+-----+
+
+4. Find the coldest day (column MIN) for the month of March across all years (2015-2024) (Points: 1):
++-----------+------------------------------------------------+----------+---+
+|STATION    |NAME                                            |DATE      |MIN|
++-----------+------------------------------------------------+----------+---+
+|72429793812|CINCINNATI MUNICIPAL AIRPORT LUNKEN FIELD, OH US|2015-03-06|3.2|
++-----------+------------------------------------------------+----------+---+
+
+5. Find the year with the most precipitation for Cincinnati and Florida (Points: 1):
++-----------+------------------------------------------------+----+---------+
+|STATION    |NAME                                            |year|MEAN_PRCP|
++-----------+------------------------------------------------+----+---------+
+|72429793812|CINCINNATI MUNICIPAL AIRPORT LUNKEN FIELD, OH US|2018|0.16     |
+|99495199999|SEBASTIAN INLET STATE PARK, FL US               |2022|0.0      |
++-----------+------------------------------------------------+----+---------+
+
+6. Count the percentage of missing values for wind gust (column GUST) for Cincinnati and Florida in the year 2024 (Points: 1):
++----------+---------------------------------+
+|City      |Percentage of Missing GUST Values|
++----------+---------------------------------+
+|Cincinnati|39.07%                           |
+|Florida   |100.00%                          |
++----------+---------------------------------+
+
+7. Find the mean, median, mode, and standard deviation of the temperature (column TEMP) for Cincinnati in each month for the year 2020 (Points: 1):
++-----+---------+-----------+---------+-----------+
+|MONTH|Mean_TEMP|Median_TEMP|Mode_TEMP|StdDev_TEMP|
++-----+---------+-----------+---------+-----------+
+|1    |37.95    |37.7       |43.1     |8.35       |
+|2    |36.59    |36.0       |25.9     |7.9        |
+|3    |49.07    |47.8       |39.6     |8.78       |
+|4    |51.78    |51.0       |48.4     |7.31       |
+|5    |60.89    |63.7       |73.9     |9.31       |
+|6    |72.55    |73.7       |74.2     |4.9        |
+|7    |77.6     |77.9       |72.5     |2.34       |
+|8    |73.35    |73.7       |73.2     |3.49       |
+|9    |66.1     |65.8       |60.6     |7.12       |
+|10   |55.19    |54.0       |51.1     |6.73       |
+|11   |48.0     |47.7       |47.7     |6.83       |
+|12   |35.99    |35.2       |32.1     |6.64       |
++-----+---------+-----------+---------+-----------+
+
+8. Find the top 10 days with the lowest Wind Chill for Cincinnati in 2017 (Points: 1):
++-----------+------------------------------------------------+----------+----+----+-------------------+
+|STATION    |NAME                                            |DATE      |TEMP|WDSP|WIND_CHILL         |
++-----------+------------------------------------------------+----------+----+----+-------------------+
+|72429793812|CINCINNATI MUNICIPAL AIRPORT LUNKEN FIELD, OH US|2017-01-07|10.5|7.0 |-0.4140156367932173|
+|72429793812|CINCINNATI MUNICIPAL AIRPORT LUNKEN FIELD, OH US|2017-12-31|11.0|5.3 |2.0339767075993116 |
+|72429793812|CINCINNATI MUNICIPAL AIRPORT LUNKEN FIELD, OH US|2017-12-27|13.0|5.8 |3.820645509123832  |
+|72429793812|CINCINNATI MUNICIPAL AIRPORT LUNKEN FIELD, OH US|2017-12-28|13.6|5.8 |4.533355269061226  |
+|72429793812|CINCINNATI MUNICIPAL AIRPORT LUNKEN FIELD, OH US|2017-01-06|13.6|5.5 |4.868933041653884  |
+|72429793812|CINCINNATI MUNICIPAL AIRPORT LUNKEN FIELD, OH US|2017-01-08|15.9|5.2 |7.929748208036862  |
+|72429793812|CINCINNATI MUNICIPAL AIRPORT LUNKEN FIELD, OH US|2017-12-25|25.8|13.5|14.285113218297408 |
+|72429793812|CINCINNATI MUNICIPAL AIRPORT LUNKEN FIELD, OH US|2017-12-30|21.6|5.3 |14.539211253038193 |
+|72429793812|CINCINNATI MUNICIPAL AIRPORT LUNKEN FIELD, OH US|2017-01-05|22.2|5.8 |14.748861828163854 |
+|72429793812|CINCINNATI MUNICIPAL AIRPORT LUNKEN FIELD, OH US|2017-12-26|23.3|6.2 |15.688977805634499 |
++-----------+------------------------------------------------+----------+----+----+-------------------+
+
+9. Investigate how many days had extreme weather conditions for Florida (fog, rain, snow, etc.) using the `FRSHTT` column (Points: 1):
++--------------------+
+|Extreme_Weather_Days|
++--------------------+
+|                   0|
++--------------------+
+
+10. Predict the maximum Temperature for Cincinnati for November and December 2024, based on the previous 2 years of weather data (Points: 1):
++-----+--------------------+------------------+------------+
+|Month|True_Actual_Max_Temp|Predicted_Max_Temp|Error_Margin|
++-----+--------------------+------------------+------------+
+|   11|                80.1|             75.78|        4.32|
+|   12|                63.0|             68.21|        5.21|
++-----+--------------------+------------------+------------+
+
+- Discussion
+	- Chosen model - Random Forest Regressor  for non linear, tabular data.
+	- For time series forecasting task, I used 1-year-lag and 2-year-lag of features max temp, dew point, precipitation, and pressure
+	- The model evaluation results on 2024 test set is pretty good with low RMSE of 4.22 and MAE of 3.53.
+	- The prediction of the November 2024 and December 2024 has a low margin of error, indicating a well performed model.
+- **Improvements**
+	- I think the model will benefit from a much larger training size of 20 or 30 years of Cincinnati weather data
+	- Experiments in more feature such as wind gust, wind speed and station pressure can increase the performance. However, we also have to take into account the curse of dimensionality and also the huge number of missing data for wind gust.
+	- While Random Forests handle non linear data well, they are not strictly designed for sequential time series forecasting. Upgrading to an algorithm specifically built for temporal data, such as ARIMA or even RNN may yield more performance.
