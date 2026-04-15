@@ -1,0 +1,23 @@
+[project]
+name = "college-chatbot"
+version = "0.1.0"
+description = "College inquiry chatbot powered by Gemini API on FastAPI"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "jinja2",
+    "python-dotenv",
+    "google-genai>=1.73.1",
+]
+
+[dependency-groups]
+dev = [
+    "ruff",
+    "ty",
+]
+
+[scripts]
+dev = "uvicorn app:app --reload --port 8000"
+lint = "ruff check . && ruff format --check ."
+typecheck = "ty check ."

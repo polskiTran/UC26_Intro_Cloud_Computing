@@ -1,0 +1,36 @@
+{
+    "institution": "University of Cincinnati",
+    "as_of": "2026-04-14",
+    "source_type": "official university sources",
+    "faq": [
+        {
+            "question": "Does the college have a football team?",
+            "answer_short": "Yes.",
+            "answer_detailed": "Yes. The University of Cincinnati has the Cincinnati Bearcats football team, and Nippert Stadium has been the home of the football team since 1901.",
+            "official_link": "https://www.uc.edu/big-12.html",
+            "source_title": "UC in the Big XII | University of Cincinnati"
+        },
+        {
+            "question": "Does it offer a Computer Science major?",
+            "answer_short": "Yes.",
+            "answer_detailed": "Yes. The University of Cincinnati offers a Bachelor of Science in Computer Science.",
+            "official_link": "https://www.ceas.uc.edu/academics/departments/computer-science/degrees-programs/computer-science-bachelor-of-science.html",
+            "source_title": "Computer Science BSCS | University of Cincinnati"
+        },
+        {
+            "question": "What is the in-state tuition?",
+            "answer_short": "$7,197 per full-time term for Ohio residents at the Uptown/Clifton campus for the 2025-26 cohort.",
+            "answer_detailed": "For Ohio residents at the Uptown/Clifton campus, UC lists undergraduate tuition for the 2025-26 cohort as $7,197 per full-time term and $14,394 per full-time year.",
+            "official_link": "https://www.uc.edu/about/financial-aid/starting/costs/costs-2026.html",
+            "source_title": "UC Costs 2025-26 | University of Cincinnati",
+            "notes": "Tuition varies by campus, residency category, and cohort."
+        },
+        {
+            "question": "Does it provide on-campus housing?",
+            "answer_short": "Yes.",
+            "answer_detailed": "Yes. UC provides on-campus housing, including traditional rooms, junior suite rooms, suite rooms, and apartment-style rooms.",
+            "official_link": "https://www.uc.edu/campus-life/housing.html",
+            "source_title": "Housing - Campus Life | University of Cincinnati"
+        }
+    ]
+}
