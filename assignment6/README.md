@@ -116,7 +116,7 @@ CREATOR_EMAIL = "your.email@university.edu"
 
 ### Deploying to Google Compute Engine
 
-1. Create an Ubuntu 22.04 VM on GCE (e2-micro or e2-small)
+1. Create an Ubuntu 24.04 LTS VM on GCE (e2-micro)
 2. Add a firewall rule allowing TCP port 8000:
    ```bash
    gcloud compute firewall-rules create allow-8000 --allow tcp:8000 --direction INGRESS
