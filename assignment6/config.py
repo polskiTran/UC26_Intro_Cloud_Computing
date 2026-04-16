@@ -10,7 +10,7 @@ GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
 
 CREATOR_FIRST_NAME: str = "Tiep"
 CREATOR_LAST_NAME: str = "Tran"
-CREATOR_EMAIL: str = "TiepTran@mail.uc.edu"
+CREATOR_EMAIL: str = "tran2tp@mail.uc.edu"
 
 _knowledge_path = Path(__file__).parent / "knowledge.json"
 with open(_knowledge_path) as _f:
